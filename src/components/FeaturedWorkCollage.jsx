@@ -1,10 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Eye, Video, Maximize } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-export const FeaturedWorkCollage = ({ onOpenShowreel }) => {
+export const FeaturedWorkCollage = () => {
   const { t, isRTL } = useLanguage();
 
   const panels = [
@@ -56,7 +54,6 @@ export const FeaturedWorkCollage = ({ onOpenShowreel }) => {
             Some Stories
             Are Meant to Be
             Experienced. (Red italic)
-            CTA: VIEW MORE WORK →
           */}
           <div className="lg:col-span-5 flex flex-col justify-center space-y-6">
             <motion.div
@@ -81,44 +78,29 @@ export const FeaturedWorkCollage = ({ onOpenShowreel }) => {
               <p className="mt-6 text-sm font-inter text-obsidian/75 leading-relaxed max-w-md">
                 {t.work.demonstrationNote}
               </p>
-
-              <div className="pt-8">
-                <button
-                  onClick={onOpenShowreel}
-                  className="group inline-flex items-center space-x-3 rtl:space-x-reverse px-6 py-3.5 bg-obsidian text-purewhite font-space text-xs font-bold uppercase tracking-[0.2em] rounded-sm transition-all duration-300 hover:bg-signature-red shadow-lg"
-                >
-                  <span>{t.work.cta}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-                </button>
-              </div>
             </motion.div>
           </div>
 
           {/* 
             RIGHT COLUMN:
-            Three Interconnected, Diagonally Clipped Visual Panels:
-            Panel 1: Spectacular live event stage with dramatic lighting.
-            Panel 2: Professional television camera operator.
-            Panel 3: Broadcasting control room with multiple live monitors.
-            Interlocking angular geometric crops so the images feel like one artistic composition!
+            Three Interconnected, Diagonally Clipped Visual Panels (Display-only, non-clickable)
           */}
           <div className="lg:col-span-7">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-0 relative">
-              {panels.map((panel, idx) => (
+              {panels.map((panel) => (
                 <motion.div
                   key={panel.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, delay: panel.delay }}
-                  onClick={onOpenShowreel}
-                  className={`group relative h-96 sm:h-[460px] overflow-hidden cursor-pointer bg-obsidian shadow-2xl transition-all duration-500 hover:z-20 md:${panel.clipClass}`}
+                  className={`group relative h-96 sm:h-[460px] overflow-hidden bg-obsidian shadow-2xl transition-all duration-500 hover:z-20 select-none md:${panel.clipClass}`}
                 >
                   {/* Panel Image */}
                   <img
                     src={panel.image}
                     alt={panel.title}
-                    className="w-full h-full object-cover filter brightness-90 contrast-105 transition-transform duration-700 ease-out group-hover:scale-110"
+                    className="w-full h-full object-cover filter brightness-90 contrast-105 transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="lazy"
                   />
 
@@ -126,16 +108,13 @@ export const FeaturedWorkCollage = ({ onOpenShowreel }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent opacity-85 group-hover:opacity-75 transition-opacity" />
                   <div className="absolute inset-0 bg-signature-red/10 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                  {/* Panel Content (Overlay on hover/focus) */}
-                  <div className="absolute inset-0 p-6 flex flex-col justify-between z-10">
-                    {/* Top Tag & Indicator */}
+                  {/* Panel Content */}
+                  <div className="absolute inset-0 p-6 flex flex-col justify-between z-10 pointer-events-none">
+                    {/* Top Tag */}
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-mono font-bold tracking-widest uppercase px-2 py-0.5 bg-obsidian/80 text-signature-red border border-charcoal rounded-sm backdrop-blur-sm">
                         {panel.tag}
                       </span>
-                      <div className="w-7 h-7 rounded-full bg-signature-red/20 group-hover:bg-signature-red text-purewhite flex items-center justify-center transition-colors">
-                        <Maximize className="w-3.5 h-3.5" />
-                      </div>
                     </div>
 
                     {/* Bottom Metadata */}

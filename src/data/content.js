@@ -557,63 +557,39 @@ export const translations = {
 export const kay2TvVideos = [
   {
     id: "v1",
-    youtubeId: "tVqW6XgJ2x0",
-    title: "Kay2 TV Morning Transmission — Cultural Special & Live Studio Broadcast",
-    titleAr: "بث تلفزيون Kay2 TV الصباحي — حلقة ثقافية وبث استوديو حي",
-    duration: "42:15",
-    date: "Latest Broadcast",
-    dateAr: "أحدث بث",
+    youtubeId: "dXbGO6JM4j4",
+    title: "Kay2 Sahar Rida Generation Next : NRE Exam Marks & Answer Key Kyun Nahi? Dr. Ali Ka Big Statement",
+    titleAr: "برنامج Kay2 Sahar — لقاء خاص مع د. علي حول اختبارات NRE وتوجهات الجيل القادم",
+    channel: "Kay2 TV Mornings",
+    date: "Featured Broadcast",
+    dateAr: "بث مميز",
     category: "Morning Show",
-    views: "128K views",
-    thumbnail: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=800&q=80"
+    thumbnail: "https://i.ytimg.com/vi/dXbGO6JM4j4/hqdefault.jpg",
+    url: "https://youtu.be/dXbGO6JM4j4?si=Ujo4enzPt2feehUf"
   },
   {
     id: "v2",
-    youtubeId: "kJQP7kiw5Fk",
-    title: "Kay2 News Prime Bulletin — Regional Headlines & Live Telemetry",
-    titleAr: "نشرة أخبار تلفزيون Kay2 الرئيسية — تغطيات ميدانية وتقارير مباشرة",
-    duration: "28:40",
-    date: "1 day ago",
-    dateAr: "منذ يوم",
-    category: "News Bulletin",
-    views: "94K views",
-    thumbnail: "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=800&q=80"
+    youtubeId: "F31Bb3sRyOQ",
+    title: "KAY2 Sehar with Dr. Noor Ul Sabah | Morning Show | Dubai Special | Music, Lifestyle & Entertainment",
+    titleAr: "برنامج KAY2 Sehar مع د. نور الصباح | حلقة دبي الخاصة | موسيقى وترفيه وأسلوب حياة",
+    channel: "Kay2 TV Mornings",
+    date: "Dubai Special",
+    dateAr: "حلقة دبي الخاصة",
+    category: "Dubai Special",
+    thumbnail: "https://i.ytimg.com/vi/F31Bb3sRyOQ/hqdefault.jpg",
+    url: "https://youtu.be/F31Bb3sRyOQ?si=AmfoRyvv0xA83cCL"
   },
   {
     id: "v3",
-    youtubeId: "L_LUpnjgPso",
-    title: "Sur Sanjhay Live Concert Stage — Multi-Camera Musical Extravaganza",
-    titleAr: "حفل سور سانجهاي الموسيقي الحي — تغطية مسرحية متعددة الكاميرات",
-    duration: "56:30",
-    date: "3 days ago",
-    dateAr: "منذ 3 أيام",
-    category: "Musical Stage",
-    views: "215K views",
-    thumbnail: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "v4",
-    youtubeId: "fJ9rUzIMcZQ",
-    title: "Live Outside Broadcast (OB Van) — National Heritage Festival Coverage",
-    titleAr: "بث خارجي مباشر (عربة OB) — تغطية مهرجان التراث الوطني",
-    duration: "34:10",
-    date: "5 days ago",
-    dateAr: "منذ 5 أيام",
-    category: "Outside Broadcast",
-    views: "82K views",
-    thumbnail: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80"
-  },
-  {
-    id: "v5",
-    youtubeId: "2Vv-BfVoq4g",
-    title: "Thishkuwaan Comedy Special — Prime-Time Studio Entertainment",
-    titleAr: "برنامج ثيشكوان الكوميدي — إنتاج ترفيهي واستوديو تفاعلي",
-    duration: "38:20",
-    date: "1 week ago",
-    dateAr: "منذ أسبوع",
-    category: "Entertainment",
-    views: "340K views",
-    thumbnail: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80"
+    youtubeId: "qXvD_FYF-uA",
+    title: "Kay2 Sehar Mishi: Dr. Mukhtar Ahmed & Dr. Huma Tahir Special Interview on Education & Media Trends",
+    titleAr: "لقاء خاص مع د. مختار أحمد ود. هما طاهر حول التعليم واتجاهات الإعلام",
+    channel: "Kay2 TV Mornings",
+    date: "Special Interview",
+    dateAr: "مقابلة خاصة",
+    category: "Special Interview",
+    thumbnail: "https://i.ytimg.com/vi/qXvD_FYF-uA/hqdefault.jpg",
+    url: "https://youtu.be/qXvD_FYF-uA?si=I2ZsgZuq0LTuK_hs"
   }
 ];
 

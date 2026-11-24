@@ -92,6 +92,7 @@ export const HomePage = () => {
       {/* INTERACTIVE MODALS */}
       <ShowreelModal
         isOpen={showreelOpen}
+        video={activeVideo}
         onClose={() => {
           setShowreelOpen(false);
           setActiveVideo(null);

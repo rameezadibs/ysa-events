@@ -1,4 +1,4 @@
-﻿import React, { useId } from 'react';
+import React, { useId } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, ArrowDown, Play, AudioLines } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
