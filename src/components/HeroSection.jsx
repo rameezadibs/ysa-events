@@ -28,7 +28,6 @@ export const HeroSection = ({ onOpenShowreel, onExploreServices }) => {
       <motion.p className="cinema-hero__description" {...reveal(.4)}>{t.hero.subheadline}</motion.p>
       <motion.div className="cinema-hero__actions" {...reveal(.5)}>
         <button type="button" className="cinema-hero__explore" onClick={onExploreServices}>{t.hero.ctaExplore}<ArrowRight size={20} aria-hidden="true" /></button>
-        <button type="button" className="cinema-hero__showreel" onClick={onOpenShowreel}><span className="cinema-hero__play"><Play size={18} fill="currentColor" aria-hidden="true" /></span>{t.hero.ctaShowreel}</button>
       </motion.div>
     </div>
     <motion.div className="cinema-hero__brand" {...reveal(.6)}><ReferenceLogo /></motion.div>
