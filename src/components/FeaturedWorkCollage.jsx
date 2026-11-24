@@ -83,13 +83,13 @@ export const FeaturedWorkCollage = ({ onOpenShowreel }) => {
               </p>
 
               <div className="pt-8">
-                <Link
-                  to="/videos"
+                <button
+                  onClick={onOpenShowreel}
                   className="group inline-flex items-center space-x-3 rtl:space-x-reverse px-6 py-3.5 bg-obsidian text-purewhite font-space text-xs font-bold uppercase tracking-[0.2em] rounded-sm transition-all duration-300 hover:bg-signature-red shadow-lg"
                 >
                   <span>{t.work.cta}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
-                </Link>
+                </button>
               </div>
             </motion.div>
           </div>

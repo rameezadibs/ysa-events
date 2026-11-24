@@ -195,12 +195,12 @@ export const LiveBroadcastSection = ({ onOpenLiveModal, onPlayVideo }) => {
             </div>
 
             <div className="pt-2 text-right rtl:text-left">
-              <Link
-                to="/videos"
+              <button
+                onClick={onOpenLiveModal}
                 className="text-xs font-space font-semibold uppercase tracking-wider text-signature-red hover:text-purewhite transition-colors inline-flex items-center space-x-1"
               >
                 <span>{t.live.viewAllVideos}</span>
-              </Link>
+              </button>
             </div>
           </div>
 

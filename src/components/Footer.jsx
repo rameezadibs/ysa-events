@@ -57,16 +57,25 @@ export const Footer = () => {
               {t.footer.navTitle}
             </span>
             <ul className="grid grid-cols-2 gap-2 text-xs font-space uppercase">
-              {navLinks.map((link) => (
-                <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-ivory/70 hover:text-purewhite hover:underline decoration-signature-red underline-offset-4 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isHome = link.path === '/';
+                return (
+                  <li key={link.path}>
+                    {isHome ? (
+                      <Link
+                        to="/"
+                        className="text-ivory/70 hover:text-purewhite hover:underline decoration-signature-red underline-offset-4 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <span className="text-ivory/40 cursor-default select-none">
+                        {link.name}
+                      </span>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -138,8 +147,8 @@ export const Footer = () => {
           </div>
 
           <div className="flex items-center space-x-6 text-[11px]">
-            <Link to="/about" className="hover:text-ivory">{t.footer.privacy}</Link>
-            <Link to="/about" className="hover:text-ivory">{t.footer.terms}</Link>
+            <span className="text-ivory/50">{t.footer.privacy}</span>
+            <span className="text-ivory/50">{t.footer.terms}</span>
             <span className="text-signature-red font-semibold">{t.footer.domain}</span>
           </div>
         </div>

@@ -49,30 +49,40 @@ export const Navbar = ({ onOpenLiveModal, onOpenContactModal }) => {
 
           {/* Center: Desktop Navigation with Thin Red Underline */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-8 rtl:space-x-reverse font-space text-sm tracking-wide">
-            {navLinks.map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  `relative py-1.5 px-2 transition-colors duration-200 uppercase font-medium ${
-                    isActive ? 'text-purewhite' : 'text-ivory/70 hover:text-purewhite'
-                  }`
-                }
-              >
-                {({ isActive }) => (
-                  <>
-                    <span>{link.name}</span>
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeNavIndicator"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-signature-red shadow-red-subtle"
-                        transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                      />
-                    )}
-                  </>
-                )}
-              </NavLink>
-            ))}
+            {navLinks.map((link) => {
+              const isHome = link.path === '/';
+              return isHome ? (
+                <NavLink
+                  key={link.path}
+                  to="/"
+                  className={({ isActive }) =>
+                    `relative py-1.5 px-2 transition-colors duration-200 uppercase font-medium ${
+                      isActive ? 'text-purewhite' : 'text-ivory/70 hover:text-purewhite'
+                    }`
+                  }
+                >
+                  {({ isActive }) => (
+                    <>
+                      <span>{link.name}</span>
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeNavIndicator"
+                          className="absolute bottom-0 left-0 right-0 h-[2px] bg-signature-red shadow-red-subtle"
+                          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                        />
+                      )}
+                    </>
+                  )}
+                </NavLink>
+              ) : (
+                <span
+                  key={link.path}
+                  className="relative py-1.5 px-2 text-ivory/40 uppercase font-medium cursor-default select-none transition-colors"
+                >
+                  {link.name}
+                </span>
+              );
+            })}
           </nav>
 
           {/* Right: Language Selector & Outlined WATCH LIVE Button */}
@@ -153,22 +163,34 @@ export const Navbar = ({ onOpenLiveModal, onOpenContactModal }) => {
               </div>
 
               <nav className="flex flex-col space-y-4">
-                {navLinks.map((link, idx) => (
-                  <NavLink
-                    key={link.path}
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `flex items-center justify-between py-2.5 text-2xl font-space uppercase tracking-tight transition-colors ${
-                        isActive
-                          ? 'text-signature-red font-bold'
-                          : 'text-ivory hover:text-purewhite font-medium'
-                      }`
-                    }
-                  >
-                    <span>{link.name}</span>
-                    <span className="text-xs font-mono text-ivory/40">0{idx + 1}</span>
-                  </NavLink>
-                ))}
+                {navLinks.map((link, idx) => {
+                  const isHome = link.path === '/';
+                  return isHome ? (
+                    <NavLink
+                      key={link.path}
+                      to="/"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `flex items-center justify-between py-2.5 text-2xl font-space uppercase tracking-tight transition-colors ${
+                          isActive
+                            ? 'text-signature-red font-bold'
+                            : 'text-ivory hover:text-purewhite font-medium'
+                        }`
+                      }
+                    >
+                      <span>{link.name}</span>
+                      <span className="text-xs font-mono text-ivory/40">0{idx + 1}</span>
+                    </NavLink>
+                  ) : (
+                    <div
+                      key={link.path}
+                      className="flex items-center justify-between py-2.5 text-2xl font-space uppercase tracking-tight text-ivory/30 cursor-default select-none"
+                    >
+                      <span>{link.name}</span>
+                      <span className="text-xs font-mono text-ivory/20">0{idx + 1}</span>
+                    </div>
+                  );
+                })}
               </nav>
 
               <div className="pt-6 border-t border-charcoal">
