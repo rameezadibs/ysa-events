@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #080808;
+    color: #F4F0EA;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Smooth custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #262626;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D71920;
+  }
+}
+
+/* Editorial Shapes and Angled Clips */
+.clip-diagonal-right {
+  clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.clip-diagonal-left {
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 15% 100%);
+}
+
+.clip-editorial-hero {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 8% 100%);
+}
+
+.clip-panel-1 {
+  clip-path: polygon(0 0, 100% 0, 88% 100%, 0% 100%);
+}
+
+.clip-panel-2 {
+  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0% 100%);
+}
+
+.clip-panel-3 {
+  clip-path: polygon(12% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.clip-slant-editorial {
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+
+/* Atmospheric Glows & Vignettes */
+.hero-vignette {
+  background: radial-gradient(circle at 75% 45%, rgba(215, 25, 32, 0.12) 0%, rgba(8, 8, 8, 0.4) 45%, #080808 85%);
+}
+
+.radial-lens-glow {
+  background: radial-gradient(circle at 50% 100%, rgba(215, 25, 32, 0.18) 0%, rgba(26, 26, 26, 0.6) 40%, #080808 80%);
+}
+
+/* Film grain effect */
+.film-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Subtle editorial borders */
+.border-subtle-red {
+  border-color: rgba(215, 25, 32, 0.35);
+}
+
+/* RTL Helpers */
+[dir="rtl"] .font-space {
+  font-family: 'Tajawal', 'Space Grotesk', sans-serif;
+}
+
+[dir="rtl"] .font-cormorant {
+  font-family: 'Amiri', 'Cormorant Garamond', serif;
+}

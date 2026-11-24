@@ -1,0 +1,72 @@
+﻿.cinema-hero { position:relative; isolation:isolate; width:100%; min-height:700px; height:max(100svh,56.28vw); max-height:1200px; overflow:hidden; background:#03080b; color:white; font-family:Arial,Helvetica,sans-serif; }
+.cinema-hero__scene { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:-3; }
+.cinema-hero__shade { position:absolute; inset:0; z-index:-2; background:linear-gradient(90deg,rgb(0 0 0 / .18),transparent 43%),linear-gradient(0deg,#030607,transparent 15%); }
+.cinema-hero__copy { position:absolute; left:6.7%; top:19.2%; width:37%; }
+.cinema-hero__eyebrow { display:flex; align-items:center; gap:10px; width:max-content; max-width:100%; position:relative; margin:0 0 2.4vw 1.8%; padding:5px 0 5px 16px; font-size:clamp(14px,1.48vw,25px); font-weight:500; line-height:1.2; }
+.cinema-hero__eyebrow::before { content:''; position:absolute; left:0; top:0; bottom:0; width:12px; border:2px solid #f00000; border-right:0; }
+.cinema-hero__eyebrow > span { width:.65em; height:.65em; border-radius:50%; background:#ed0000; flex-shrink:0; }
+.cinema-hero__title { margin:0; font-size:clamp(42px,4.4vw,79px); font-style:italic; font-weight:800; letter-spacing:-.035em; line-height:.99; }
+.cinema-hero__title > span { display:block; white-space:nowrap; }
+.cinema-hero__underline { width:34%; height:6px; border-radius:2px; margin-top:1.35vw; background:#ec0000; }
+.cinema-hero__description { margin:2.4vw 0 2.8vw; max-width:470px; width:81%; font-size:clamp(15px,1.28vw,22px); line-height:1.25; text-wrap:pretty; }
+.cinema-hero__actions { display:flex; align-items:center; gap:2.4vw; white-space:nowrap; }
+.cinema-hero__actions button { display:inline-flex; align-items:center; justify-content:center; gap:12px; font-size:clamp(11px,1.02vw,18px); font-weight:700; cursor:pointer; transition:background .2s,transform .2s; }
+.cinema-hero__explore { background:#e60000; padding:18px 26px; border:0; border-radius:3px; }
+.cinema-hero__explore:hover { background:#c90000; transform:translateY(-2px); }
+.cinema-hero__showreel { background:transparent; padding:5px 0; border:0; }
+.cinema-hero__play { display:grid; place-items:center; width:42px; height:42px; border:2px solid white; border-radius:50%; transition:background .2s; }
+.cinema-hero__play svg { margin-left:3px; }
+.cinema-hero__showreel:hover .cinema-hero__play { background:#e60000; }
+.cinema-hero button:focus-visible { outline:2px solid white; outline-offset:6px; }
+.cinema-hero__brand { position:absolute; left:79.3%; top:40.5%; width:14.7%; }
+.cinema-hero__logo { display:block; width:100%; overflow:hidden; }
+.cinema-hero__frame { position:absolute; inset:15.2% 1.9% 12.7%; pointer-events:none; }
+.cinema-hero__frame i { position:absolute; width:33px; height:33px; border:solid rgb(255 255 255 / .85); border-width:0; }
+.cinema-hero__frame i:nth-child(1) { top:0; left:0; border-width:2px 0 0 2px; border-radius:5px 0 0; }
+.cinema-hero__frame i:nth-child(2) { top:0; right:0; border-width:2px 2px 0 0; border-radius:0 5px 0 0; }
+.cinema-hero__frame i:nth-child(3) { bottom:0; left:0; border-width:0 0 2px 2px; border-radius:0 0 0 5px; }
+.cinema-hero__frame i:nth-child(4) { bottom:0; right:0; border-width:0 2px 2px 0; border-radius:0 0 5px; }
+.cinema-hero__progress { position:absolute; left:4.7%; bottom:6.3%; display:flex; gap:3px; width:16.2%; }
+.cinema-hero__progress i { height:4px; flex:1; border-radius:2px; background:#aaa; }
+.cinema-hero__progress i:first-child { background:#f00000; }
+.cinema-hero__scroll { position:absolute; bottom:3.8%; left:50%; transform:translateX(-50%); display:flex; align-items:center; flex-direction:column; gap:8px; background:transparent; border:0; font-size:12px; letter-spacing:.18em; cursor:pointer; }
+.cinema-hero__audio { position:absolute; right:4.9%; bottom:5.4%; }
+.cinema-hero__copy[dir='rtl'] .cinema-hero__title { font-style:normal; line-height:1.3; }
+.cinema-hero__copy[dir='rtl'] .cinema-hero__actions { white-space:normal; }
+@media (min-width:768px) and (max-width:1100px) {
+ .cinema-hero { height:760px; min-height:760px; }
+ .cinema-hero__scene { object-position:58% center; }
+ .cinema-hero__copy { top:22%; left:6%; width:49%; }
+ .cinema-hero__title { font-size:5.5vw; }
+ .cinema-hero__description { margin:30px 0; }
+ .cinema-hero__brand { top:43%; left:80%; width:17%; }
+ .cinema-hero__explore { padding:16px; }
+ .cinema-hero__shade { background:linear-gradient(90deg,rgb(0 0 0 / .6),transparent 67%),linear-gradient(0deg,#030607,transparent 20%); }
+}
+@media (max-width:767px) {
+ .cinema-hero { height:auto; min-height:940px; max-height:none; padding:110px 7% 120px; }
+ .cinema-hero__scene { height:540px; top:390px; object-position:65% center; }
+ .cinema-hero__shade { background:linear-gradient(180deg,#03080b 0%,#03080b 35%,transparent 58%,transparent 85%,#030607 98%); }
+ .cinema-hero__copy { position:relative; top:auto; left:auto; width:100%; }
+ .cinema-hero__eyebrow { font-size:14px; margin:0 0 22px; }
+ .cinema-hero__title { font-size:clamp(29px,7.6vw,58px); line-height:1.04; }
+ .cinema-hero__underline { margin-top:17px; height:4px; width:126px; }
+ .cinema-hero__description { font-size:15px; margin:22px 0; max-width:390px; width:100%; }
+ .cinema-hero__actions { gap:18px; flex-wrap:wrap; }
+ .cinema-hero__actions button { font-size:11px; gap:8px; }
+ .cinema-hero__explore { padding:14px 16px; }
+ .cinema-hero__play { width:32px; height:32px; }
+ .cinema-hero__brand { left:auto; right:6%; top:605px; width:22%; }
+ .cinema-hero__frame { inset:91px 3% 85px; }
+ .cinema-hero__frame i { width:19px; height:19px; }
+ .cinema-hero__progress { width:24%; bottom:40px; }
+ .cinema-hero__scroll { bottom:25px; font-size:10px; }
+ .cinema-hero__audio { bottom:35px; width:23px; }
+}
+@media (prefers-reduced-motion:reduce) { .cinema-hero *, .cinema-hero *::before { transition:none !important; } }
+@media (min-width:1101px) {
+ .cinema-hero__eyebrow { margin-bottom:2vw; }
+ .cinema-hero__title { font-size:clamp(42px,4.25vw,79px); }
+ .cinema-hero__description { width:85%; max-width:500px; }
+}
+@media (max-width:767px) { .cinema-hero__brand { top:452px; } }
