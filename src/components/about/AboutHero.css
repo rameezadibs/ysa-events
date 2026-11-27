@@ -1,0 +1,58 @@
+﻿.about-cinema {
+  position: relative;
+  isolation: isolate;
+  margin-top: 80px;
+  min-height: 700px;
+  height: calc(100svh - 80px);
+  max-height: 1100px;
+  overflow: hidden;
+  background: #080808;
+  color: #f4f0ea;
+}
+.about-cinema__photo { position: absolute; inset: 0 0 0 26%; z-index: -1; overflow: hidden; }
+.about-cinema__photo img { width: 100%; height: calc(100% + 40px); max-width: none; object-fit: cover; object-position: 53% center; }
+.about-cinema__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgb(8 8 8 / .18), transparent 35%, rgb(8 8 8 / .15)), linear-gradient(0deg, rgb(8 8 8 / .25), transparent 35%); }
+.about-cinema__content { position: relative; width: 40%; padding-top: clamp(64px, 10.5vh, 120px); margin-inline-start: 4.6%; }
+.about-cinema__eyebrow { display: flex; align-items: center; gap: 13px; font: 500 14px 'Space Grotesk', sans-serif; letter-spacing: .2em; white-space: nowrap; }
+.about-cinema__eyebrow i { flex: 0 0 10px; height: 10px; background: #d71920; border-radius: 50%; }
+.about-cinema__eyebrow b { width: 100%; max-width: 285px; height: 1px; margin-inline-start: 14px; background: #383735; }
+.about-cinema__headline { margin: clamp(42px, 6.6vh, 70px) 0 0; font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 4.45vw, 86px); font-weight: 700; line-height: 1.02; letter-spacing: -.045em; }
+.about-cinema__line { display: block; overflow: hidden; padding-bottom: .07em; }
+.about-cinema__line > span, .about-cinema__line > em { display: block; white-space: nowrap; }
+.about-cinema__accent { color: #d71920; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.53em; font-weight: 700; line-height: .99; letter-spacing: -.035em; padding: .03em .12em .13em 0; }
+.about-cinema__description { max-width: 420px; margin-top: clamp(20px, 3.5vh, 38px); padding: 3px 0 3px 18px; border-inline-start: 1px solid #d71920; font: 400 clamp(16px, 1.18vw, 19px)/1.6 'Inter', sans-serif; text-wrap: pretty; }
+.about-cinema__cta { display: inline-flex; justify-content: center; align-items: center; min-height: 50px; margin-top: 34px; padding: 13px 34px; border: 1px solid #f4f0ea; font: 600 13px 'Space Grotesk', sans-serif; letter-spacing: .16em; transition: color .3s, background-color .3s; }
+.about-cinema__cta:hover { background: #f4f0ea; color: #080808; }
+.about-cinema__cta:focus-visible { outline: 2px solid #d71920; outline-offset: 6px; }
+.about-cinema__label { position: absolute; top: 40px; right: 3%; padding: 10px 0 10px 20px; border-left: 1px solid #d71920; font: 600 12px 'Space Grotesk', sans-serif; letter-spacing: .2em; text-shadow: 0 2px 8px #080808; }
+.about-cinema__strip { position: absolute; bottom: 40px; left: 3%; display: flex; align-items: center; gap: 13px; font: 500 clamp(9px, .8vw, 13px) 'Space Grotesk', sans-serif; letter-spacing: .15em; }
+.about-cinema__strip > span:nth-child(even) { color: #d71920; font-size: 18px; }
+[dir='rtl'] .about-cinema__content { margin-inline-start: 0; margin-left: 4.6%; direction: rtl; }
+[dir='rtl'] .about-cinema__headline { font-family: 'Tajawal', sans-serif; }
+[dir='rtl'] .about-cinema__accent { font-family: 'Amiri', serif; }
+[dir='rtl'] .about-cinema__description { padding: 3px 18px 3px 0; }
+@media (min-width: 768px) and (max-width: 1100px) {
+  .about-cinema { min-height: 680px; max-height: 860px; }
+  .about-cinema__content { width: 45%; padding-top: 110px; }
+  .about-cinema__headline { font-size: 4.8vw; }
+  .about-cinema__eyebrow { font-size: 11px; }
+  .about-cinema__description { max-width: 330px; }
+  .about-cinema__photo { left: 25%; }
+}
+@media (max-width: 767px) {
+  .about-cinema { height: auto; min-height: 0; max-height: none; margin-top: 76px; padding-bottom: 26px; display: flex; flex-direction: column; }
+  .about-cinema__content, [dir='rtl'] .about-cinema__content { width: auto; margin: 0; padding: 38px 24px 0; }
+  .about-cinema__eyebrow { font-size: 11px; gap: 10px; letter-spacing: .18em; }
+  .about-cinema__headline { margin-top: 32px; font-size: clamp(36px, 9.6vw, 70px); }
+  .about-cinema__accent { font-size: 1.48em; }
+  .about-cinema__description { margin-top: 20px; max-width: 410px; font-size: 16px; }
+  .about-cinema__cta { margin-top: 24px; font-size: 12px; padding-inline: 26px; }
+  .about-cinema__photo { position: relative; inset: auto; order: 2; width: 116%; margin-left: -16%; height: clamp(310px, 85vw, 520px); margin-top: 26px; }
+  .about-cinema__photo img { object-position: 58% center; }
+  .about-cinema__label { position: relative; inset: auto; order: 3; align-self: flex-end; margin: 15px 24px 20px; font-size: 10px; }
+  .about-cinema__strip { position: relative; inset: auto; order: 4; justify-content: center; flex-wrap: wrap; padding: 0 18px; gap: 7px; font-size: 8px; letter-spacing: .08em; }
+}
+@media (prefers-reduced-motion: reduce) { .about-cinema *, .about-cinema *::after { transition: none !important; } }
+/* Match the reference's broad, heavy editorial letterforms. */
+.about-cinema__headline { font-family: Arial, Helvetica, sans-serif; font-weight: 800; letter-spacing: -.035em; }
+.about-cinema__accent { font-family: Georgia, 'Times New Roman', serif; font-size: 1.4em; letter-spacing: -.055em; }

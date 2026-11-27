@@ -50,11 +50,11 @@ export const Navbar = ({ onOpenLiveModal, onOpenContactModal }) => {
           {/* Center: Desktop Navigation with Thin Red Underline */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-8 rtl:space-x-reverse font-space text-sm tracking-wide">
             {navLinks.map((link) => {
-              const isHome = link.path === '/';
-              return isHome ? (
+              const isClickable = link.path === '/' || link.path === '/about' || link.path === '/contact';
+              return isClickable ? (
                 <NavLink
                   key={link.path}
-                  to="/"
+                  to={link.path}
                   className={({ isActive }) =>
                     `relative py-1.5 px-2 transition-colors duration-200 uppercase font-medium ${
                       isActive ? 'text-purewhite' : 'text-ivory/70 hover:text-purewhite'
@@ -164,11 +164,11 @@ export const Navbar = ({ onOpenLiveModal, onOpenContactModal }) => {
 
               <nav className="flex flex-col space-y-4">
                 {navLinks.map((link, idx) => {
-                  const isHome = link.path === '/';
-                  return isHome ? (
+                  const isClickable = link.path === '/' || link.path === '/about' || link.path === '/contact';
+                  return isClickable ? (
                     <NavLink
                       key={link.path}
-                      to="/"
+                      to={link.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={({ isActive }) =>
                         `flex items-center justify-between py-2.5 text-2xl font-space uppercase tracking-tight transition-colors ${

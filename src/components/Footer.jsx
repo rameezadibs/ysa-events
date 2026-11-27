@@ -58,12 +58,12 @@ export const Footer = () => {
             </span>
             <ul className="grid grid-cols-2 gap-2 text-xs font-space uppercase">
               {navLinks.map((link) => {
-                const isHome = link.path === '/';
+                const isClickable = link.path === '/' || link.path === '/about' || link.path === '/contact';
                 return (
                   <li key={link.path}>
-                    {isHome ? (
+                    {isClickable ? (
                       <Link
-                        to="/"
+                        to={link.path}
                         className="text-ivory/70 hover:text-purewhite hover:underline decoration-signature-red underline-offset-4 transition-colors"
                       >
                         {link.name}
